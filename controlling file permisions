@@ -1,0 +1,26 @@
+incubus@incubus-ThinkCentre-M93p:/home$ ls
+incubus
+incubus@incubus-ThinkCentre-M93p:/home$ pwd
+/home
+incubus@incubus-ThinkCentre-M93p:/home$ touch demo.txt
+touch: cannot touch 'demo.txt': Permission denied
+incubus@incubus-ThinkCentre-M93p:/home$ sudo touch demo.txt
+incubus@incubus-ThinkCentre-M93p:/home$ ls
+demo.txt  incubus
+incubus@incubus-ThinkCentre-M93p:/home$ ls -al
+total 12
+drwxr-xr-x  3 root    root    4096 Mar 27 11:27 .
+drwxr-xr-x 20 root    root    4096 Mar 25 20:18 ..
+-rw-r--r--  1 root    root       0 Mar 27 11:27 demo.txt
+drwxr-xr-x 17 incubus incubus 4096 Mar 25 21:36 incubus
+incubus@incubus-ThinkCentre-M93p:/home$ chmod u=rwx,g=rw,o=r demo.txt
+chmod: changing permissions of 'demo.txt': Operation not permitted
+incubus@incubus-ThinkCentre-M93p:/home$ sudo chmod u=rwx,g=rw,o=r demo.txt
+incubus@incubus-ThinkCentre-M93p:/home$ ls -al
+total 12
+drwxr-xr-x  3 root    root    4096 Mar 27 11:27 .
+drwxr-xr-x 20 root    root    4096 Mar 25 20:18 ..
+-rwxrw-r--  1 root    root       0 Mar 27 11:27 demo.txt
+drwxr-xr-x 17 incubus incubus 4096 Mar 25 21:36 incubus
+incubus@incubus-ThinkCentre-M93p:/home$ ^C
+incubus@incubus-ThinkCentre-M93p:/home$ 
